@@ -28,8 +28,8 @@ body
 .card>img{
   opacity: 1;
   background: black;
-  height:450px;
-  transition:opacity .4s ease-in;
+  height:500px;
+  transition:opacity .1s ease-in;
 }
 .card-body
 {
