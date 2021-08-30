@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React,{Component} from "react";
+import "./style.css";
+import MovieContainer from "./MovieContainer"
+import Header from "./Header"
+const imgpath="https://image.tmdb.org/t/p/w1280/"
+const allmovies=[];
+class App extends Component{
+  constructor(props){
+  super(props)
+  this.state={
+    statemovies:[]
+  }
 }
-
+  componentDidMount(){
+    fetch("https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1")
+    .then(response =>response.json())
+    .then(response => {
+      for (let i=0;i<=response.results.length-1;i++)
+      {
+        allmovies.push(response.results[i]);
+        
+      }
+      this.setState({
+        statemovies:allmovies
+      })
+    })
+  }
+render() {
+  return(
+    <div >
+    <Header/>
+    <div className="container-body">
+    {this.state.statemovies.map((movie)=>(<MovieContainer title={movie.original_title} posterurl={imgpath+movie.poster_path} description={movie.overview} movieid={movie.id} year={movie.release_date}/>))}
+    </div>
+  </div>
+  )
+}
+}
 export default App;

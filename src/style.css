@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@200;400&display=swap');
+h1, p {
+  font-family: Lato;
+}
+*{
+box-sizing:border-box;
+}
+body
+{
+  background-color:rgb(0, 0, 0);
+  font-family: 'Urbanist', sans-serif;
+}
+.container-body
+{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.container:hover
+{
+  cursor:pointer;
+}
+.card
+{
+  background-color: black;
+}
+
+.card>img{
+  opacity: 1;
+  background: black;
+  height:450px;
+  transition:opacity .4s ease-in;
+}
+.card-body
+{
+position: absolute;
+top:3rem;
+  
+}
+.year
+{
+  font-weight: 500;
+  font-size: 20px;
+  opacity: 0;
+}
+.card-title,.card-text
+{
+  opacity: 0;
+}
+.card:hover >img
+{
+  background: black;
+  opacity: .3;
+}
+.card:hover .card-text
+{
+  color: white;
+  opacity: 1;
+}
+.card:hover .card-title
+{
+  color: white;
+  opacity: 1;
+}
+.card:hover .year
+{
+  color: white;
+  opacity: 1;
+}
+/* .container .card
+{
+  margin-top:10px;
+  height:540px;
+  width:360px;
+  background-color:rgb(32, 28, 28);
+  border-radius:10px;
+  border:1px solid rgb(255, 253, 253);
+  transition: height 1s ease-in-out;
+}
+.container .card:hover{
+opacity: .5;
+position:inherit;
+}
+.container .card .image-container >img
+{
+  position: relative;
+  border-radius:10px;
+  height:400px;
+  width:360px;
+  transition:all 2s;
+}
+.container .card .basic-info
+{
+  display:flex;
+  height:40px;
+  background-color:rgb(7, 7, 7);
+  align-items:center;
+  padding-right:10px;
+  position:relative;
+}
+.container .card .basic-info .title >h1
+{
+  color:white;
+  font-size:18px;
+  font-weight:700;
+  text-wrap:wrap;
+  font-family: 'Urbanist', sans-serif;
+}
+.container .card .basic-info .year >h1
+{
+  color:white;
+  font-size:15px;
+  font-weight:500;
+}
+.container .card .description
+{
+  padding:0px 5px 0px 5px;
+  width:360px;
+  overflow:hidden;
+  height:80px;
+  color:rgb(255, 255, 255);
+  background-color: rgb(32, 28, 28);
+  transition: height ease-in-out;
+}
+.container .card .description >p
+{
+  padding:5px;
+  font-size:16px;
+  font-weight:500;
+  font-family: 'Urbanist', sans-serif;
+  text-align: justify;
+} */
